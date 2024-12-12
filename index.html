@@ -52,10 +52,7 @@
         companyName: "DefaultCompany",
         productName: "DemoGame",
         productVersion: "1.0",
-        showBanner: unityShowBanner,
       };
-
-      loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -66,9 +63,6 @@
           loadingText.textContent = percent + '%';
         }).then((unityInstance) => {
           loadingCover.style.display = 'none';
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
           var { retrieveLaunchParams, postEvent } = window.telegramApps.sdk;
             var lp = retrieveLaunchParams();
             console.log("retrieveLaunchParams");
